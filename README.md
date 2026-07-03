@@ -28,7 +28,7 @@ https://mt2.cn/
 
 ---
 
-## 3. ZArchiver
+## 3. ZArchiver (Opcional)
 
 Necesario para extraer archivos ZIP y administrar carpetas fácilmente.
 
@@ -57,25 +57,25 @@ pkg install git -y
 Clona este repositorio:
 
 ```bash
-git clone https://github.com/TU_USUARIO/TU_REPOSITORIO.git
+git clone https://github.com/devperry/TermuxForge.git
 ```
 
 Entra al repositorio:
 
 ```bash
-cd TU_REPOSITORIO
+cd TermuxForge
 ```
 
 Dale permisos de ejecución al instalador:
 
 ```bash
-chmod +x setup.sh
+chmod +x setupTermux.sh
 ```
 
 Ejecútalo:
 
 ```bash
-./setup.sh
+./setupTermux.sh
 ```
 
 Este script realizará automáticamente lo siguiente:
@@ -83,9 +83,10 @@ Este script realizará automáticamente lo siguiente:
 - Actualizará los paquetes de Termux.
 - Instalará **proot-distro**.
 - Instalará **Alpine Linux**.
-- Instalará **OpenJDK 8** dentro de Alpine.
 
-Cuando termine verás un mensaje indicando que la instalación fue completada.
+
+Cuando Estes dentro de Alphine Clona Algun Mod
+
 
 ---
 
@@ -101,29 +102,26 @@ Ahora estarás dentro de Alpine Linux con Java 8 listo para usarse.
 
 ---
 
-# Estructura del repositorio
+
+Una vez tengas un mod, muevelo a un lugar donde puedas acceder con MT Manager como (/storage/emulated/0/) :
 
 ```
-README.md
-setup.sh
-simple mod 1.8.9 test/
+mv mod_test /storage/emulated/0/
 ```
-
-La carpeta:
+Luego crea un enlace ->
 
 ```
-simple mod 1.8.9 test/
+ln -s /storage/emulated/0/mod_test mod_test
 ```
 
-contiene un ejemplo completamente funcional de un mod para Forge 1.8.9.
 
-Puedes copiar esta carpeta para comenzar cualquier proyecto nuevo.
 
 ---
 
 # Editar el código
 
 Se recomienda utilizar **MT Manager** para modificar el proyecto.
+
 
 Con MT Manager podrás:
 
@@ -140,13 +138,14 @@ Con MT Manager podrás:
 Después de ingresar a Alpine:
 
 ```bash
-cd /storage/emulated/0/TU_REPOSITORIO/simple\ mod\ 1.8.9\ test
+cd mod_test
 ```
 
 Compila el proyecto ejecutando:
 
 ```bash
-./gradlew build
+chmod +x gradlew
+bash gradlew build
 ```
 
 Si todo salió correctamente, el archivo compilado estará en:
@@ -165,8 +164,5 @@ build/libs/
 
 ---
 
-# ¡Eso es todo!
-
-Ahora ya tienes un entorno completamente funcional para desarrollar mods de Minecraft Forge 1.8.9 directamente desde Android.
 
 Si este repositorio te fue útil, considera dejar una ⭐ en GitHub.
